@@ -2,7 +2,7 @@
   <div class="col-md-12">
     <img src="<%= image_url "daft_logo_footer.png" %>">
 
-    <h2 id = "mailing-list-signup-heading">Join our mailing list for Daft News!</h2>
+    <h2>Join our mailing list for Daft News!</h2>
       <%= form_tag mailinglists_sign_up_path, remote: true, :class=>'form-inline' do %>
         <%= text_field_tag :name, '', :placeholder=>'Name', :class=> 'form-control' %>
         <%= text_field_tag :email, '', :placeholder=>"Email", :class=>'form-control' %>

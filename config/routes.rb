@@ -2,6 +2,11 @@ Rails.application.routes.draw do
 
   resources :articles
 
+  resource :sessions
+
+  get 'category/:category' => 'articles#category', :as=>:category
+
+  post 'mailinglists/sign_up'
 
   get 'static/category'
 
@@ -16,6 +21,7 @@ Rails.application.routes.draw do
   get 'static/profile'
 
   root 'articles#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

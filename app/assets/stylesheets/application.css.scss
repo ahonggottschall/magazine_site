@@ -22,6 +22,23 @@
     text-transform: uppercase;
   }
 
+  .input-group {
+
+    ul {
+      display:  inline;
+    }
+
+  .btn {
+    border-radius: 0;
+    border: none;
+    text-transform: uppercase;
+    font-size: 10px;
+    height: 34px;
+    margin-left:  10px;
+  }
+
+}
+
   .form-inline {
 
     input.form-control {
@@ -36,18 +53,8 @@
       height: 34px;
     }
 
-    .btn {
-      border-radius: 0;
-      border: none;
-      text-transform: uppercase;
-      font-size: 10px;
-      height: 34px;
-    }
 
-    .input-group button {
-      background-color: #444;
-      color: white;
-    }
+
 
     .circle {
       background-color: #888;
@@ -70,36 +77,47 @@
     }
   }
 
+  .category-list.music .category-music {
+    border-bottom: 15px solid blue;
+  }
+
+
+  .category-list.tech .category-tech {
+  border-bottom: 15px solid #50cfaa;
+  }
+
+  .category-list.finance .category-finance {
+  border-bottom: 15px solid green;
+  }
+
+  .category-list.art .category-art {
+    border-bottom: 15px solid purple;
+  }
+
+  .category-list.music .category-music {
+    border-bottom: 15px solid blue;
+  }
+
+  .category-list.food .category-food {
+    border-bottom: 15px solid yellow;
+  }
+
+  .category-list.culture .category-culture {
+    border-bottom: 15px solid red;
+  }
+
   .category-list {
     .category-item {
 
       height: 120px;
       text-align: center;
 
-      &.active {
+      /*&.active {
 
         border-bottom-width: 15px;
         border-bottom-style: solid;
 
-        &.category-tech {
-          border-bottom-color: #50cfaa;
-        }
-        &.category-finance {
-          border-bottom-color: green;
-        }
-        &.category-art {
-          border-bottom-color: purple;
-        }
-        &.category-music {
-          border-bottom-color: blue;
-        }
-        &.category-food {
-          border-bottom-color: yellow;
-        }
-        &.category-culture {
-          border-bottom-color: red;
-        }
-      }
+      }*/
 
       a {
         padding-top: 30px;
@@ -153,15 +171,21 @@
     margin-top: 25px;
 
 
-    &.tech, &.culture {
+    &.tech, &.culture, &.finance, &.food, &.music, &.art {
       background-repeat: no-repeat;
       background-size: 30px 30px;
       padding-left: 45px;
     }
 
+
     &.tech    { background-image: image-url( "badge_tech.png" );    }
     &.culture { background-image: image-url( "badge_culture.png" ); }
+    &.finance { background-image: image-url( "badge_finance.png" ); }
+    &.food { background-image: image-url( "badge_food.png" ); }
+    &.music { background-image: image-url( "badge_music.png" ); }
+    &.art { background-image: image-url( "badge_art.png" ); }
   }
+
 
   .article_row {
     padding-bottom: 10px;
@@ -201,6 +225,7 @@
   }
 
   .article {
+
     background: white;
     color: black;
 
@@ -214,8 +239,14 @@
     }
 
     .about_author {
-      background: #50cfaa;
-      color: white;
+
+      &.tech {background:  #50cfaa;}
+      &.music {background:  blue;}
+      &.art {background:  purple; }
+      &.food {background:  yellow;}
+      &.finance {background:  green;}
+      &.culture {background:  red;}
+
 
       h1 {
         margin-top: 0;
@@ -314,6 +345,11 @@
 
 .post-form {
 
+
+  li {
+    font-weight:  bold;
+    color:  red;
+  }
   .photo-placeholder {
     display: block;
     margin-left: auto;
@@ -334,3 +370,9 @@
 
 
 }
+
+  .field_with_errors {
+    input, textarea {
+    border:  1px solid red;
+    }
+  }

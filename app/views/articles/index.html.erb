@@ -25,22 +25,25 @@
 
       <hr>
 
-      <% 5.times do %>
+    <% @articles.each do |alpha| %>
         <div class="row homepage_article text-left">
           <div class="col-md-3">
             <img src="http://placehold.it/400x300" class="img-responsive">
           </div>
           <div class="col-md-9">
-            <h2 class="title">Nasa announces plans to launch chimpanzee into sun</h2>
-            <p class="byline">by Beverly T Miller // 8.1.2014</p>
-            <p class="summary">Pickled bicycle rights viral Neutra Echo Park. Bespoke sriracha Brooklyn jean shorts VHS artisan, next level Wes Anderson Williamsburg flexitarian gentrify. Master cleanse Godard lo-fi, +1 butcher hashtag meh Intelligentsia lomo slow-carb brunch.</p>
+
+            <h2 class="title"><%= link_to alpha.title, article_path(alpha) %></h2>
+            <p class="byline"><%= "By: #{alpha.author}" %></p>
+            <p class="summary"><%= truncate(alpha.content, :length => 200, separator: "")%></p>
           </div>
         </div>
 
         <hr>
       <% end %>
 
-      <ul class="pagination">
+      <%= will_paginate @articles, renderer:  BootstrapPagination::Rails %>
+
+      <!--<ul class="pagination">
         <li><a href="#">&laquo;</a></li>
         <li><a href="#">1</a></li>
         <li><a href="#">2</a></li>
@@ -48,7 +51,7 @@
         <li><a href="#">4</a></li>
         <li><a href="#">5</a></li>
         <li><a href="#">&raquo;</a></li>
-      </ul>
+      </ul>-->
     </div>
   </div>
 
